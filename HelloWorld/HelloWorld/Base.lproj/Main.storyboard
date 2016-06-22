@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,25 +18,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="4vc-vx-mpf">
-                                <rect key="frame" x="72.5" y="60" width="455.5" height="480"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tDQ-eP-VzT">
+                                <rect key="frame" x="73" y="60" width="411" height="433"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xQE-VC-4pv">
+                                        <rect key="frame" x="0.0" y="0.0" width="411" height="433"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lpe-OA-drV">
+                                                <rect key="frame" x="0.0" y="0.0" width="411" height="433"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="L00-ra-tTn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="411" height="433"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pfw-mi-iP0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="411" height="433"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EyO-ds-CyN">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="411" height="433"/>
+                                                                        <subviews>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="4vc-vx-mpf">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="411" height="433"/>
+                                                                                <animations/>
+                                                                                <color key="backgroundColor" red="1" green="0.43476474389340081" blue="0.70520759927905252" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" secondItem="4vc-vx-mpf" secondAttribute="height" multiplier="351:370" id="RwK-01-9tK"/>
+                                                                                </constraints>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                        <animations/>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <animations/>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <animations/>
+                                                    </stackView>
+                                                </subviews>
+                                                <animations/>
+                                            </stackView>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                </subviews>
                                 <animations/>
-                                <color key="backgroundColor" red="1" green="0.43476474389340081" blue="0.70520759927905252" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="4vc-vx-mpf" secondAttribute="height" multiplier="351:370" id="RwK-01-9tK"/>
-                                </constraints>
-                            </imageView>
+                            </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="4vc-vx-mpf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FiX-UC-mFy"/>
-                            <constraint firstItem="4vc-vx-mpf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QsK-dn-dcd"/>
-                            <constraint firstItem="4vc-vx-mpf" firstAttribute="width" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="UnY-Tu-yTS"/>
-                            <constraint firstItem="4vc-vx-mpf" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.8" priority="750" id="VDH-Zu-vbU"/>
-                            <constraint firstItem="4vc-vx-mpf" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" priority="750" id="bXt-Vj-eAF"/>
-                            <constraint firstItem="4vc-vx-mpf" firstAttribute="height" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.8" id="upv-XJ-dzq"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
