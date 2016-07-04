@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AAB8EB6B1D28C16D00177081 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB8EB6A1D28C16D00177081 /* Engine.swift */; };
 		AADB9D521D2709160075FFB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB9D511D2709160075FFB9 /* AppDelegate.swift */; };
 		AADB9D541D2709160075FFB9 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB9D531D2709160075FFB9 /* MainController.swift */; };
 		AADB9D571D2709160075FFB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AADB9D551D2709160075FFB9 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AAB8EB6A1D28C16D00177081 /* Engine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 		AADB9D4E1D2709160075FFB9 /* Assignment2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AADB9D511D2709160075FFB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AADB9D531D2709160075FFB9 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -60,13 +62,14 @@
 		AADB9D501D2709160075FFB9 /* Assignment2 */ = {
 			isa = PBXGroup;
 			children = (
-				AADB9D631D270A6B0075FFB9 /* Problem2ViewController.swift */,
 				AADB9D511D2709160075FFB9 /* AppDelegate.swift */,
 				AADB9D531D2709160075FFB9 /* MainController.swift */,
 				AADB9D551D2709160075FFB9 /* Main.storyboard */,
 				AADB9D581D2709160075FFB9 /* Assets.xcassets */,
 				AADB9D5A1D2709160075FFB9 /* LaunchScreen.storyboard */,
+				AADB9D631D270A6B0075FFB9 /* Problem2ViewController.swift */,
 				AADB9D651D270A8E0075FFB9 /* Problem3ViewController.swift */,
+				AAB8EB6A1D28C16D00177081 /* Engine.swift */,
 				AADB9D671D270AA60075FFB9 /* Problem4ViewController.swift */,
 				AADB9D5D1D2709160075FFB9 /* Info.plist */,
 			);
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AADB9D541D2709160075FFB9 /* MainController.swift in Sources */,
+				AAB8EB6B1D28C16D00177081 /* Engine.swift in Sources */,
 				AADB9D641D270A6B0075FFB9 /* Problem2ViewController.swift in Sources */,
 				AADB9D681D270AA60075FFB9 /* Problem4ViewController.swift in Sources */,
 				AADB9D661D270A8E0075FFB9 /* Problem3ViewController.swift in Sources */,
@@ -300,6 +304,7 @@
 				AADB9D621D2709160075FFB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
