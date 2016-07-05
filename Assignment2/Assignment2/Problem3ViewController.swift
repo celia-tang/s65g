@@ -15,6 +15,8 @@ class Problem3ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.title = "Problem 3"
         
+        before = Array(count: size, repeatedValue:[Bool](count: size, repeatedValue:false))
+        
         // loop through before array and set initial values
         for column in 0..<size {
             for row in 0..<size {
@@ -33,9 +35,9 @@ class Problem3ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    //  CONSTANT SIZE DOES NOT WORK , COME BACK HERE
+    
     let size = 10
-    var before = Array(count: 10, repeatedValue:[Bool](count: 10, repeatedValue:false))
+    var before : Array<Array<Bool>> = []
     
     @IBAction func IBAction(sender: UIButton) {
         let engine = Engine()

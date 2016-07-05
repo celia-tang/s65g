@@ -15,6 +15,9 @@ class Problem2ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.title = "Problem 2"
         
+        before = Array(count: 10, repeatedValue:[Bool](count: 10, repeatedValue:false))
+        after = Array(count: 10, repeatedValue:[Bool](count: 10, repeatedValue:false))
+        
         // loop through before array and set initial values
         for column in 0..<size {
             for row in 0..<size {
@@ -35,10 +38,11 @@ class Problem2ViewController: UIViewController {
     }
     
     @IBOutlet weak var IBOutlet: UITextView!
-    // initialize arrays and size COME BACK HERE constant size not working...
+    
+    
     let size = 10
-    var before = Array(count: 10, repeatedValue:[Bool](count: 10, repeatedValue:false))
-    var after = Array(count: 10, repeatedValue:[Bool](count: 10, repeatedValue:false))
+    var before : Array<Array<Bool>> = []
+    var after : Array<Array<Bool>> = []
     
     @IBAction func IBAction(sender: UIButton) {
         
