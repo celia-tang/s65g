@@ -76,7 +76,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.70549178479999997" blue="0.75944874780000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="w5W-Aa-y5x" firstAttribute="top" secondItem="mC2-jb-AOM" secondAttribute="bottom" constant="20" id="2Zp-h5-2g6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="w5W-Aa-y5x" secondAttribute="bottom" constant="10" id="6YK-KK-QLY"/>

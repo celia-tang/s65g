@@ -17,8 +17,8 @@ import UIKit
     @IBInspectable var diedColor: UIColor = UIColor.blueColor()
     @IBInspectable var gridColor: UIColor = UIColor.grayColor()
     @IBInspectable var gridWidth: CGFloat = 2.0
+
     var grid: Array<Array<ViewController.CellState>>!
-    var redraw = false
     var cell: (x:Int, y:Int)!
     
     //let box:CGRect = view.bounds;
@@ -36,34 +36,27 @@ import UIKit
     
     override func drawRect(rect: CGRect) {
         
-        clearsContextBeforeDrawing = true
-
         let path = UIBezierPath()
         path.lineWidth = gridWidth
-        let width = bounds.width * 0.9
-        let height = bounds.height * 0.9
-        let marginWidth = (bounds.width * 0.1)/2
-        let marginHeight = (bounds.height * 0.1)/2
+        let width = bounds.width
+        let height = bounds.height
         
         var center: CGPoint
+        // doesnt account for gridWidth
         let cellWidth:CGFloat = (width - (CGFloat(rows + 1) * gridWidth)) / CGFloat(rows)
-        let widthCenter:CGFloat = cellWidth/2 + gridWidth
-        let cellHeight:CGFloat = (height - (CGFloat(cols + 1) * gridWidth)) / CGFloat(cols)
-        let heightCenter:CGFloat = cellHeight/2 + gridWidth
+        let cellRadius = cellWidth/2
+        let xCenter = gridWidth/2
         
-        //if redraw == false {
         //for the horizontal strokes
         for i in 0...rows {
             
-            //move the initial point of the path to the start of the horizontal stroke
             path.moveToPoint(CGPoint(
-                x:marginWidth + width/2 - width/2,
-                y:rect.origin.x + marginHeight + ((y:height/CGFloat(rows)) * CGFloat(i))))
+                x:xCenter,
+                y:xCenter + (CGFloat(i) * (gridWidth + cellWidth))))
             
-            //add a point to the path at the end of the stroke
-            path.addLineToPoint(CGPoint(
-                x:marginWidth + width/2 + width/2,
-                y:rect.origin.x + marginHeight + ((y:height/CGFloat(rows)) * CGFloat(i))))
+                path.addLineToPoint(CGPoint(
+                x:width,
+                y:xCenter + (CGFloat(i) * (gridWidth + cellWidth))))
             
             //set the stroke color
             gridColor.setStroke()
@@ -75,19 +68,17 @@ import UIKit
         // for vertical strokes
         for i in 0...cols {
             
-            //move the initial point of the path to the start of the horizontal stroke
             path.moveToPoint(CGPoint(
-                x:rect.origin.y + marginWidth + ((x:width/CGFloat(cols)) * CGFloat(i)),
-                y:marginHeight + height/2 - height/2))
-            
-            //add a point to the path at the end of the stroke
+                x:xCenter + (CGFloat(i) * (gridWidth + cellWidth)),
+                y:xCenter))
+
             path.addLineToPoint(CGPoint(
-                x:rect.origin.y + marginWidth + ((x:width/CGFloat(cols)) * CGFloat(i)),
-                y:marginHeight + height/2 + height/2))
+                x:xCenter + (CGFloat(i) * (gridWidth + cellWidth)),
+                y:height))
             
             
             //set the stroke color
-            UIColor.blackColor().setStroke()
+            gridColor.setStroke()
             
             //draw the stroke
             path.stroke()
@@ -101,10 +92,10 @@ import UIKit
                 let circlePath = UIBezierPath()
                 
                 center = CGPoint(
-                    x: marginWidth + widthCenter + ((cellWidth + gridWidth) * CGFloat(i)),
-                    y: marginHeight + heightCenter + ((cellHeight + gridWidth) * CGFloat(j)))
+                    x: cellRadius + gridWidth + ((cellWidth + gridWidth) * CGFloat(i)),
+                    y: cellRadius + gridWidth + ((cellWidth + gridWidth) * CGFloat(j)))
                 circlePath.moveToPoint(center)
-                circlePath.addArcWithCenter(center, radius: cellWidth/2, startAngle: 0.0, endAngle: 2.0 * CGFloat(M_PI), clockwise: true)
+                circlePath.addArcWithCenter(center, radius: (cellRadius), startAngle: 0.0, endAngle: 2.0 * CGFloat(M_PI), clockwise: true)
                 
                 // set color
                 switch grid[i][j] {
@@ -117,7 +108,6 @@ import UIKit
                 case .Died:
                     diedColor.setFill()
                 }
-                
                 circlePath.fill()
                 
             }
@@ -126,22 +116,20 @@ import UIKit
 
     // returns the cell the point corresponds to
     func getCell(point: CGPoint) -> (x: Int ,y: Int){
-        
-        let marginWidth = (bounds.width * 0.1)/2
-        let marginHeight = (bounds.height * 0.1)/2
-        let width = bounds.width * 0.9
-        let height = bounds.height * 0.9
+
+        let width = bounds.width
+        let height = bounds.height
         let i = point.x
         let j = point.y
         var m = -1
         var n = -1
 
-        if (i > marginWidth) && (i < (marginWidth + width)) {
-            m = Int((point.x - marginWidth)) / Int((width / CGFloat(rows)))
+        if (i >= 0) && (i <= width) {
+            m = Int(i / (width / CGFloat(rows)))
         }
         
-        if (j > marginHeight) && (j < (marginHeight + height)) {
-            n = Int((point.y - marginHeight)) / Int((height / CGFloat(cols)))
+        if (j >= 0) && (j <= height) {
+            n = Int(j / (height / CGFloat(cols)))
             
         }
         return (m, n)
@@ -232,30 +220,19 @@ import UIKit
         if (cell.0 >= 0 && cell.1 >= 0 && cell.0 < rows && cell.1 < cols) {
             grid[cell.0][cell.1] = grid[cell.0][cell.1].toggle(grid[cell.0][cell.1])
             
-            let width = bounds.width * 0.9
-            let height = bounds.height * 0.9
+            let width = bounds.width
             let cellWidth:CGFloat = (width - (CGFloat(rows + 1) * gridWidth)) / CGFloat(rows)
-            let cellHeight:CGFloat = (height - (CGFloat(cols + 1) * gridWidth)) / CGFloat(cols)
-            let widthCenter:CGFloat = cellWidth/2 + gridWidth
-            let heightCenter:CGFloat = cellHeight/2 + gridWidth
-            let marginWidth = (bounds.width * 0.1)/2
-            let marginHeight = (bounds.height * 0.1)/2
+            let cellRadius = cellWidth/2
             
             let center = CGPoint(
-                x: marginWidth + widthCenter + ((cellWidth + gridWidth) * CGFloat(cell.0)),
-                y: marginHeight + heightCenter + ((cellHeight + gridWidth) * CGFloat(cell.1)))
+                    x: cellRadius + gridWidth + ((cellWidth + gridWidth) * CGFloat(cell.0)),
+                    y: cellRadius + gridWidth + ((cellWidth + gridWidth) * CGFloat(cell.1)))
             
-//            let cellDraw = CGRect(
-//                origin: CGPoint(
-//                    x: center.x - (cellWidth/2),
-//                    y: center.y + (cellHeight/2)),
-//                size: CGSize(
-//                    width: cellWidth,
-//                    height: cellHeight))
-//            
-            redraw = true
-            //self.setNeedsDisplayInRect(cellDraw)
-            self.setNeedsDisplay()
+            let cellDraw = CGRectMake(center.x - (cellRadius), center.y + (cellRadius), cellWidth + 2, cellWidth + 2)
+
+            clearsContextBeforeDrawing = true
+            //setNeedsDisplayInRect(cellDraw)
+            setNeedsDisplay()
         }
     }
     
