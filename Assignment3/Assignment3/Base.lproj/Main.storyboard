@@ -53,10 +53,10 @@
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="livingColor">
-                                        <color key="value" red="0.40963279442354428" green="1" blue="0.27005059688062882" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.30934783366639418" green="0.75741185897435903" blue="0.20791698089492186" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="bornColor">
-                                        <color key="value" red="0.4096327944" green="1" blue="0.2700505969" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.434300605378523" green="1" blue="0.36533953002943353" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
                                         <color key="value" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>

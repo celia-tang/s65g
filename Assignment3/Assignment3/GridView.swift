@@ -228,11 +228,9 @@ import UIKit
                     x: cellRadius + gridWidth + ((cellWidth + gridWidth) * CGFloat(cell.0)),
                     y: cellRadius + gridWidth + ((cellWidth + gridWidth) * CGFloat(cell.1)))
             
-            let cellDraw = CGRectMake(center.x - (cellRadius), center.y + (cellRadius), cellWidth + 2, cellWidth + 2)
-
-            clearsContextBeforeDrawing = true
-            //setNeedsDisplayInRect(cellDraw)
-            setNeedsDisplay()
+            let cellDraw = CGRectMake(center.x - (cellRadius), center.y - (cellRadius), cellWidth + 2, cellWidth + 2)
+            
+            setNeedsDisplayInRect(cellDraw)
         }
     }
     
