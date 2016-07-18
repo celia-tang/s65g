@@ -222,8 +222,6 @@ class StandardEngine: EngineProtocol {
                                userInfo: self.count())
         center.postNotification(n)
         self.timer += 1
-        print ("timer: \(self.timer)")
-        
     }
     
     //provides neighboring int considering wrap around
