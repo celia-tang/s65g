@@ -195,14 +195,14 @@ class StandardEngine: EngineProtocol {
                     refreshTimer.invalidate()
                 }
                 
-                let sel = #selector(timerDidFire(_:))
-                refreshTimer = nil
-                refreshTimer = NSTimer.scheduledTimerWithTimeInterval(1/refreshRate,
-                                                                      target: self,
-                                                                      selector: sel,
-                                                                      userInfo: nil,
-                                                                      repeats: refreshOn)
                 if refreshOn {
+                    let sel = #selector(timerDidFire(_:))
+                    refreshTimer = nil
+                    refreshTimer = NSTimer.scheduledTimerWithTimeInterval(1/refreshRate,
+                                                                          target: self,
+                                                                          selector: sel,
+                                                                          userInfo: nil,
+                                                                          repeats: refreshOn)
                     refreshTimer!.fire()
                 }
             } else if let refreshTimer = refreshTimer {
