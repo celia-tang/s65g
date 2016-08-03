@@ -139,9 +139,7 @@ class StandardEngine: EngineProtocol {
                 refreshTimer.invalidate()
             }
             
-            if refreshRate <= 0 {
-                refreshRate = 0.1
-            }
+            refreshRate <= 0 ? refreshRate = 0.1 : ()
             
             refreshTimer = nil
             refreshTimer = NSTimer.scheduledTimerWithTimeInterval(1/refreshRate,
