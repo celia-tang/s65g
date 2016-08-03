@@ -73,9 +73,8 @@ class TableModel: NSObject {
     
     func getLiving() -> [Position] {
         let items = grid.cells.filter { $0.state.isLiving() }
-        let points = items.map { $0.position }
         
-        return points
+        return items.map { $0.position }
     }
 }
 
