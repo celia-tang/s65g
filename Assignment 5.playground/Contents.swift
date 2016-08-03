@@ -28,3 +28,11 @@ julianDate(2001, month: 1, day: 1) - julianDate(2000, month: 1, day: 1)
 isLeap(1960)
 isLeap(1900)
 isLeap(2000)
+
+julianDate(1901, month: 1, day: 1)
+
+
+var a = ["hello", "uo", "jiji", "asdasd"]
+a.contains("hello")
+
+a[0..<a.count-1]
